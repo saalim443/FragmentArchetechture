@@ -12,11 +12,23 @@
         android:orientation="vertical"
         android:gravity="center">
 
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
         <Button
             android:id="@+id/gotoNext"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="gotoNext"
-            android:text="login Fragment" />
+            android:text="login " />
     </LinearLayout>
 </LinearLayout>

@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.kspAndroid)
+    alias(libs.plugins.hiltPlugin)
 }
 
 android {
@@ -33,10 +35,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildTypes {
-        viewBinding {
-            enable = true
-        }
+    buildFeatures {
+        viewBinding = true
+    }
+
+    hilt {
+        enableAggregatingTask = true
     }
 }
 
@@ -54,6 +58,15 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
 
+    implementation(libs.symbol.processing.api)
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.glide)
+    ksp(libs.compiler)
 
-
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
 }
+
+
